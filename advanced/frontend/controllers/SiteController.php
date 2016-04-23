@@ -87,12 +87,12 @@ class SiteController extends Controller
             return $this->goHome();
         }
 
-        $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+        $model6 = new LoginForm();
+        if ($model6->load(Yii::$app->request->post()) && $model6->login()) {
             return $this->goBack();
         } else {
             return $this->render('login', [
-                'model' => $model,
+                'model1' => $model6,
             ]);
         }
     }
@@ -138,10 +138,22 @@ class SiteController extends Controller
      * @return mixed
      */
     public function actionAbout()
-    {
+    {   
         return $this->render('about');
     }
 
+     public function actionVideo()
+    {
+        return $this->render('video');
+    }
+    public function actionVide()
+    {
+        return $this->render('vide');
+    }
+    public function actionPlay()
+    {
+        return $this->render('play');
+    }
     /**
      * Signs user up.
      *

@@ -30,7 +30,7 @@ AppAsset::register($this);
     <?php
 
     NavBar::begin([
-        'brandLabel' =>Yii::t('common','在线教育'),
+        'brandLabel' =>Yii::t('common','DABAI-HUB'),
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -40,6 +40,7 @@ AppAsset::register($this);
         ['label' => '首页', 'url' => ['/site/index']],
         ['label' => '关于我们', 'url' => ['/site/about']],
         ['label' => '联系我们', 'url' => ['/site/contact']],
+        ['label' => '课程分类', 'url' => ['/site/video']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItemsRight[] = ['label' => '注册', 'url' => ['/site/signup']];
@@ -106,10 +107,6 @@ AppAsset::register($this);
 
     ?>
 
-    
-
-
-
 
     <div class="container">
         <?= Breadcrumbs::widget([
@@ -123,8 +120,6 @@ AppAsset::register($this);
 <footer class="footer">
     <div class="container">
         <p class="pull-left">&copy; mr_liu <?= date('Y') ?></p>
-
-        <!-- <p class="pull-right"><?= Yii::powered() ?></p> -->
     </div>
 </footer>
 

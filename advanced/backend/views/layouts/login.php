@@ -27,7 +27,7 @@ $this->registerJs('jQuery(document).ready(function(){App.init();});',View::POS_E
 <body class = "login">
 <?php $this->beginBody()?>
 	<div class="logo">
-		<img src="/yii/basic/web/statics/image/logo-big.png" alt="">
+		<img src="../statics/image/logo-big.png" alt="">
 	</div>
 
 	<div class="content">

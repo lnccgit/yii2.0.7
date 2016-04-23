@@ -7,6 +7,7 @@ use backend\assets\AppAsset;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\web\view;
+use yii\widgets\Breadcrumbs;
 
 AppAsset::register($this);
 //注册js
@@ -24,354 +25,240 @@ $this->registerJs('jQuery(document).ready(function(){App.init();});',View::POS_E
 </head>
 <body class ="page-header-fixed">
 <!-- BEGIN HEADER -->
-<div class="header navbar navbar-inverse navbar-fixed-top">
+    <div class="header navbar navbar-inverse navbar-fixed-top">
 
-        <!-- BEGIN TOP NAVIGATION BAR -->
+            <!-- BEGIN TOP NAVIGATION BAR -->
 
-        <div class="navbar-inner">
+            <div class="navbar-inner">
 
-            <div class="container-fluid">
+                <div class="container-fluid">
 
-                <!-- BEGIN LOGO -->
+                    <!-- BEGIN LOGO -->
 
-                <a class="brand" href="index.html">
+                    <a class="brand" href="index.html">
+                        
+                    <img src="statics/image/logo.png" alt="logo">
 
-                <img src="statics/image/logo.png" alt="logo">
+                    </a>
 
-                </a>
+                    <!-- END LOGO -->
 
-                <!-- END LOGO -->
+                    <!-- BEGIN RESPONSIVE MENU TOGGLER -->
 
-                <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                    <a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
 
-                <a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+                    <img src="statics/image/menu-toggler.png" alt="">
 
-                <img src="statics/image/menu-toggler.png" alt="">
+                    </a>          
 
-                </a>          
+                    <!-- END RESPONSIVE MENU TOGGLER -->            
 
-                <!-- END RESPONSIVE MENU TOGGLER -->            
+                    <!-- BEGIN TOP NAVIGATION MENU -->              
 
-                <!-- BEGIN TOP NAVIGATION MENU -->              
+                    <ul class="nav pull-right">
 
-                <ul class="nav pull-right">
+                        <!-- BEGIN NOTIFICATION DROPDOWN -->   
 
-                    <!-- BEGIN NOTIFICATION DROPDOWN -->   
+                        <li class="dropdown" id="header_notification_bar">
 
-                    <li class="dropdown" id="header_notification_bar">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-warning-sign"></i>
 
-                        <i class="icon-warning-sign"></i>
+                            <span class="badge">6</span>
 
-                        <span class="badge">6</span>
+                            </a>
 
-                        </a>
+                            <ul class="dropdown-menu extended notification">
 
-                        <ul class="dropdown-menu extended notification">
+                                <li>
 
-                            <li>
+                                    <p>你有14条通知</p>
 
-                                <p>你有14条通知</p>
+                                </li>
 
-                            </li>
+                                <li>
 
-                            <li>
+                                    <a href="#">
 
-                                <a href="#">
+                                    <span class="label label-success"><i class="icon-plus"></i></span>
 
-                                <span class="label label-success"><i class="icon-plus"></i></span>
+                                   新用户注册 
 
-                               新用户注册 
+                                    <span class="time">刚刚</span>
 
-                                <span class="time">刚刚</span>
+                                    </a>
 
-                                </a>
+                                </li>
 
-                            </li>
+                                
 
-                            
+                                <li class="external">
 
-                            <li class="external">
+                                    <a href="#">查看全部信息 <i class="m-icon-swapright"></i></a>
 
-                                <a href="#">查看全部信息 <i class="m-icon-swapright"></i></a>
+                                </li>
 
-                            </li>
+                            </ul>
 
-                        </ul>
+                        </li>
 
-                    </li>
+                        <!-- END NOTIFICATION DROPDOWN -->
 
-                    <!-- END NOTIFICATION DROPDOWN -->
+                        <!-- BEGIN INBOX DROPDOWN -->
 
-                    <!-- BEGIN INBOX DROPDOWN -->
+                        <li class="dropdown" id="header_inbox_bar">
 
-                    <li class="dropdown" id="header_inbox_bar">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-envelope"></i>
 
-                        <i class="icon-envelope"></i>
+                            <span class="badge">5</span>
 
-                        <span class="badge">5</span>
+                            </a>
 
-                        </a>
+                            <ul class="dropdown-menu extended inbox">
 
-                        <ul class="dropdown-menu extended inbox">
+                                <li>
 
-                            <li>
+                                    <p>你有12条新闻</p>
 
-                                <p>你有12条新闻</p>
+                                </li>
 
-                            </li>
+                                <li>
 
-                            <li>
+                                    <a href="inbox.html?a=view">
 
-                                <a href="inbox.html?a=view">
+                                    <span class="photo"><img src="statics/image/avatar2.jpg" alt=""></span>
 
-                                <span class="photo"><img src="statics/image/avatar2.jpg" alt=""></span>
+                                    <span class="subject">
 
-                                <span class="subject">
+                                    <span class="from">Lisa Wong</span>
 
-                                <span class="from">Lisa Wong</span>
+                                    <span class="time">Just Now</span>
 
-                                <span class="time">Just Now</span>
+                                    </span>
 
-                                </span>
+                                    <span class="message">
 
-                                <span class="message">
+                                    Vivamus sed auctor nibh congue nibh. auctor nibh
 
-                                Vivamus sed auctor nibh congue nibh. auctor nibh
+                                    auctor nibh...
 
-                                auctor nibh...
+                                    </span>  
 
-                                </span>  
+                                    </a>
 
-                                </a>
+                                </li>
+                                <li class="external">
 
-                            </li>
-                            <li class="external">
+                                    <a href="inbox.html">看更多信息 <i class="m-icon-swapright"></i></a>
 
-                                <a href="inbox.html">看更多信息 <i class="m-icon-swapright"></i></a>
+                                </li>
 
-                            </li>
+                            </ul>
 
-                        </ul>
+                        </li>
 
-                    </li>
+                        <!-- END INBOX DROPDOWN -->
 
-                    <!-- END INBOX DROPDOWN -->
+                        <!-- BEGIN TODO DROPDOWN -->
 
-                    <!-- BEGIN TODO DROPDOWN -->
+                        <li class="dropdown" id="header_task_bar">
 
-                    <li class="dropdown" id="header_task_bar">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-tasks"></i>
 
-                        <i class="icon-tasks"></i>
+                            <span class="badge">5</span>
 
-                        <span class="badge">5</span>
+                            </a>
 
-                        </a>
+                            <ul class="dropdown-menu extended tasks">
 
-                        <ul class="dropdown-menu extended tasks">
+                                
+                                <li>
 
-                            <li>
+                                    <a href="#">
 
-                                <p>You have 12 pending tasks</p>
+                                    <span class="task">
 
-                            </li>
+                                    <span class="desc">Mobile development</span>
 
-                            <li>
+                                    <span class="percent">85%</span>
 
-                                <a href="#">
+                                    </span>
 
-                                <span class="task">
+                                    <span class="progress progress-success">
 
-                                <span class="desc">New release v1.2</span>
+                                    <span style="width: 85%;" class="bar"></span>
 
-                                <span class="percent">30%</span>
+                                    </span>
 
-                                </span>
+                                    </a>
 
-                                <span class="progress progress-success ">
+                                </li>
 
-                                <span style="width: 30%;" class="bar"></span>
+                                <li class="external">
 
-                                </span>
+                                    <a href="#">See all tasks <i class="m-icon-swapright"></i></a>
 
-                                </a>
+                                </li>
 
-                            </li>
+                            </ul>
 
-                            <li>
+                        </li>
 
-                                <a href="#">
+                        <!-- END TODO DROPDOWN -->
 
-                                <span class="task">
+                        <!-- BEGIN USER LOGIN DROPDOWN -->
 
-                                <span class="desc">Application deployment</span>
+                        <li class="dropdown user">
 
-                                <span class="percent">65%</span>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
-                                </span>
+                            <img alt="" src="statics/image/avatar1_small.jpg">
 
-                                <span class="progress progress-danger progress-striped active">
+                            <span class="username" user-id="<?=Yii::$app->user->identity->id?>"><?=Yii::$app->user->identity->username?></span>
 
-                                <span style="width: 65%;" class="bar"></span>
+                            <i class="icon-angle-down"></i>
 
-                                </span>
+                            </a>
 
-                                </a>
+                            <ul class="dropdown-menu">
 
-                            </li>
+                                <li><a href="extra_profile.html"><i class="icon-user"></i>个人中心</a></li>
 
-                            <li>
+                                <li><a href="page_calendar.html"><i class="icon-calendar"></i> 我的日历</a></li>
 
-                                <a href="#">
+                                <li><a href="inbox.html"><i class="icon-envelope"></i> 我的消息</a></li>
 
-                                <span class="task">
+                                <li><a href="#"><i class="icon-tasks"></i> 我的任务</a></li>
 
-                                <span class="desc">Mobile app release</span>
+                                <li class="divider"></li>
 
-                                <span class="percent">98%</span>
+                                <li><a href="extra_lock.html"><i class="icon-lock"></i> 锁屏</a></li>
 
-                                </span>
+                                <li><a href="<?=Url::to(['site/logout'])?>" data-method="post"><i class="icon-key"></i>退出</a></li>
+                            </ul>
 
-                                <span class="progress progress-success">
+                        </li>
 
-                                <span style="width: 98%;" class="bar"></span>
+                        <!-- END USER LOGIN DROPDOWN -->
 
-                                </span>
+                    </ul>
 
-                                </a>
+                    <!-- END TOP NAVIGATION MENU --> 
 
-                            </li>
-
-                            <li>
-
-                                <a href="#">
-
-                                <span class="task">
-
-                                <span class="desc">Database migration</span>
-
-                                <span class="percent">10%</span>
-
-                                </span>
-
-                                <span class="progress progress-warning progress-striped">
-
-                                <span style="width: 10%;" class="bar"></span>
-
-                                </span>
-
-                                </a>
-
-                            </li>
-
-                            <li>
-
-                                <a href="#">
-
-                                <span class="task">
-
-                                <span class="desc">Web server upgrade</span>
-
-                                <span class="percent">58%</span>
-
-                                </span>
-
-                                <span class="progress progress-info">
-
-                                <span style="width: 58%;" class="bar"></span>
-
-                                </span>
-
-                                </a>
-
-                            </li>
-
-                            <li>
-
-                                <a href="#">
-
-                                <span class="task">
-
-                                <span class="desc">Mobile development</span>
-
-                                <span class="percent">85%</span>
-
-                                </span>
-
-                                <span class="progress progress-success">
-
-                                <span style="width: 85%;" class="bar"></span>
-
-                                </span>
-
-                                </a>
-
-                            </li>
-
-                            <li class="external">
-
-                                <a href="#">See all tasks <i class="m-icon-swapright"></i></a>
-
-                            </li>
-
-                        </ul>
-
-                    </li>
-
-                    <!-- END TODO DROPDOWN -->
-
-                    <!-- BEGIN USER LOGIN DROPDOWN -->
-
-                    <li class="dropdown user">
-
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-
-                        <img alt="" src="statics/image/avatar1_small.jpg">
-
-                        <span class="username" user-id="<?=Yii::$app->user->identity->id?>"><?=Yii::$app->user->identity->username?></span>
-
-                        <i class="icon-angle-down"></i>
-
-                        </a>
-
-                        <ul class="dropdown-menu">
-
-                            <li><a href="extra_profile.html"><i class="icon-user"></i>个人中心</a></li>
-
-                            <li><a href="page_calendar.html"><i class="icon-calendar"></i> 我的日历</a></li>
-
-                            <li><a href="inbox.html"><i class="icon-envelope"></i> 我的消息</a></li>
-
-                            <li><a href="#"><i class="icon-tasks"></i> 我的任务</a></li>
-
-                            <li class="divider"></li>
-
-                            <li><a href="extra_lock.html"><i class="icon-lock"></i> 锁屏</a></li>
-
-                            <li><a href="<?=Url::to(['site/logout'])?>" data-method="post"><i class="icon-key"></i>退出</a></li>
-                        </ul>
-
-                    </li>
-
-                    <!-- END USER LOGIN DROPDOWN -->
-
-                </ul>
-
-                <!-- END TOP NAVIGATION MENU --> 
+                </div>
 
             </div>
 
-        </div>
-
-        <!-- END TOP NAVIGATION BAR -->
+            <!-- END TOP NAVIGATION BAR -->
 
     </div>
 <!-- END HEADER -->
+
 <!-- BEGIN CONTAINER -->
   <div class="page-container row-fluid">
 
@@ -417,115 +304,17 @@ $this->registerJs('jQuery(document).ready(function(){App.init();});',View::POS_E
 
                 <li class="start ">
 
-                    <a href="index.html">
+                    <a href="<?=Url::to(['site/index'])?>">
 
                     <i class="icon-home"></i> 
 
-                    <span class="title">Dashboard</span>
+                    <span class="title">系统首页</span>
 
                     </a>
 
                 </li>
 
-                <li class="active">
-
-                    <a href="javascript:;">
-
-                    <i class="icon-cogs"></i> 
-
-                    <span class="title">Layouts</span>
-
-                    <span class="selected"></span>
-
-                    <span class="arrow"></span>
-
-                    </a>
-
-                    <ul class="sub-menu" style="display: none;">
-
-                        <li>
-
-                            <a href="layout_horizontal_sidebar_menu.html">
-
-                            Horzontal &amp; Sidebar Menu</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="layout_horizontal_menu1.html">
-
-                            Horzontal Menu 1</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="layout_horizontal_menu2.html">
-
-                            Horzontal Menu 2</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="layout_promo.html">
-
-                            Promo Page</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="layout_email.html">
-
-                            Email Templates</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="layout_ajax.html">
-
-                            Content Loading via Ajax</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="layout_sidebar_closed.html">
-
-                            Sidebar Closed Page</a>
-
-                        </li>
-
-                        <li class="active">
-
-                            <a href="layout_blank_page.html">
-
-                            Blank Page</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="layout_boxed_page.html">
-
-                            Boxed Page</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="layout_boxed_not_responsive.html">
-
-                            Non-Responsive Boxed Layout</a>
-
-                        </li>
-
-                    </ul>
-
-                </li>
+       
 
                 <li class="">
 
@@ -533,7 +322,7 @@ $this->registerJs('jQuery(document).ready(function(){App.init();});',View::POS_E
 
                     <i class="icon-bookmark-empty"></i> 
 
-                    <span class="title">UI Features</span>
+                    <span class="title">视频管理</span>
 
                     <span class="arrow"></span>
 
@@ -543,41 +332,19 @@ $this->registerJs('jQuery(document).ready(function(){App.init();});',View::POS_E
 
                         <li>
 
-                            <a href="ui_general.html">
+                            <a href="<?=Url::to(['video/create'])?>">
 
-                            General</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="ui_buttons.html">
-
-                            Buttons</a>
+                            更新视频</a>
 
                         </li>
 
+                       
+                       
                         <li>
 
-                            <a href="ui_modals.html">
+                            <a href="<?=Url::to(['video/index'])?>">
 
-                            Enhanced Modals</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="ui_tabs_accordions.html">
-
-                            Tabs &amp; Accordions</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="ui_jqueryui.html">
-
-                            jQuery UI Components</a>
+                            呵呵</a>
 
                         </li>
 
@@ -585,39 +352,14 @@ $this->registerJs('jQuery(document).ready(function(){App.init();});',View::POS_E
 
                             <a href="ui_sliders.html">
 
-                            Sliders</a>
+                            哈哈</a>
 
                         </li>
-
-                        <li>
-
-                            <a href="ui_tiles.html">
-
-                            Tiles</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="ui_typography.html">
-
-                            Typography</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="ui_tree.html">
-
-                            Tree View</a>
-
-                        </li>
-
                         <li>
 
                             <a href="ui_nestable.html">
 
-                            Nestable List</a>
+                            嘿嘿</a>
 
                         </li>
 
@@ -625,413 +367,8 @@ $this->registerJs('jQuery(document).ready(function(){App.init();});',View::POS_E
 
                 </li>
 
-                <li class="">
+  
 
-                    <a href="javascript:;">
-
-                    <i class="icon-table"></i> 
-
-                    <span class="title">Form Stuff</span>
-
-                    <span class="arrow "></span>
-
-                    </a>
-
-                    <ul class="sub-menu">
-
-                        <li>
-
-                            <a href="form_layout.html">
-
-                            Form Layouts</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="form_samples.html">
-
-                            Advance Form Samples</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="form_component.html">
-
-                            Form Components</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="form_wizard.html">
-
-                            Form Wizard</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="form_validation.html">
-
-                            Form Validation</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="form_fileupload.html">
-
-                            Multiple File Upload</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="form_dropzone.html">
-
-                            Dropzone File Upload</a>
-
-                        </li>
-
-                    </ul>
-
-                </li>
-
-                <li class="">
-
-                    <a href="javascript:;">
-
-                    <i class="icon-briefcase"></i> 
-
-                    <span class="title">Pages</span>
-
-                    <span class="arrow "></span>
-
-                    </a>
-
-                    <ul class="sub-menu">
-
-                        <li>
-
-                            <a href="page_timeline.html">
-
-                            <i class="icon-time"></i>
-
-                            Timeline</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="page_coming_soon.html">
-
-                            <i class="icon-cogs"></i>
-
-                            Coming Soon</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="page_blog.html">
-
-                            <i class="icon-comments"></i>
-
-                            Blog</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="page_blog_item.html">
-
-                            <i class="icon-font"></i>
-
-                            Blog Post</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="page_news.html">
-
-                            <i class="icon-coffee"></i>
-
-                            News</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="page_news_item.html">
-
-                            <i class="icon-bell"></i>
-
-                            News View</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="page_about.html">
-
-                            <i class="icon-group"></i>
-
-                            About Us</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="page_contact.html">
-
-                            <i class="icon-envelope-alt"></i>
-
-                            Contact Us</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="page_calendar.html">
-
-                            <i class="icon-calendar"></i>
-
-                            Calendar</a>
-
-                        </li>
-
-                    </ul>
-
-                </li>
-
-                <li class="">
-
-                    <a href="javascript:;">
-
-                    <i class="icon-gift"></i> 
-
-                    <span class="title">Extra</span>
-
-                    <span class="arrow "></span>
-
-                    </a>
-
-                    <ul class="sub-menu">
-
-                        <li>
-
-                            <a href="extra_profile.html">
-
-                            User Profile</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="extra_lock.html">
-
-                            Lock Screen</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="extra_faq.html">
-
-                            FAQ</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="inbox.html">
-
-                            Inbox</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="extra_search.html">
-
-                            Search Results</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="extra_invoice.html">
-
-                            Invoice</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="extra_pricing_table.html">
-
-                            Pricing Tables</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="extra_image_manager.html">
-
-                            Image Manager</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="extra_404_option1.html">
-
-                            404 Page Option 1</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="extra_404_option2.html">
-
-                            404 Page Option 2</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="extra_404_option3.html">
-
-                            404 Page Option 3</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="extra_500_option1.html">
-
-                            500 Page Option 1</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="extra_500_option2.html">
-
-                            500 Page Option 2</a>
-
-                        </li>
-
-                    </ul>
-
-                </li>
-
-         
-
-                <li>
-
-                    <a href="javascript:;">
-
-                    <i class="icon-folder-open"></i> 
-
-                    <span class="title">4 Level Menu</span>
-
-                    <span class="arrow "></span>
-
-                    </a>
-
-                    <ul class="sub-menu">
-
-                        <li>
-
-                            <a href="javascript:;">
-
-                            <i class="icon-cogs"></i> 
-
-                            Item 1
-
-                            <span class="arrow"></span>
-
-                            </a>
-
-                            <ul class="sub-menu">
-
-                                <li>
-
-                                    <a href="javascript:;">
-
-                                    <i class="icon-user"></i>
-
-                                    Sample Link 1
-
-                                    <span class="arrow"></span>
-
-                                    </a>
-
-                                    <ul class="sub-menu">
-
-                                        <li><a href="#"><i class="icon-remove"></i> Sample Link 1</a></li>
-
-                                        <li><a href="#"><i class="icon-pencil"></i> Sample Link 1</a></li>
-
-                                        <li><a href="#"><i class="icon-edit"></i> Sample Link 1</a></li>
-
-                                    </ul>
-
-                                </li>
-
-                                <li><a href="#"><i class="icon-user"></i>  Sample Link 1</a></li>
-
-                                <li><a href="#"><i class="icon-external-link"></i>  Sample Link 2</a></li>
-
-                                <li><a href="#"><i class="icon-bell"></i>  Sample Link 3</a></li>
-
-                            </ul>
-
-                        </li>
-
-                        <li>
-
-                            <a href="javascript:;">
-
-                            <i class="icon-globe"></i> 
-
-                            Item 2
-
-                            <span class="arrow"></span>
-
-                            </a>
-
-                            <ul class="sub-menu">
-
-                                <li><a href="#"><i class="icon-user"></i>  Sample Link 1</a></li>
-
-                                <li><a href="#"><i class="icon-external-link"></i>  Sample Link 1</a></li>
-
-                                <li><a href="#"><i class="icon-bell"></i>  Sample Link 1</a></li>
-
-                            </ul>
-
-                        </li>
-
-                        <li>
-
-                            <a href="#">
-
-                            <i class="icon-folder-open"></i>
-
-                            Item 3
-
-                            </a>
-
-                        </li>
-
-                    </ul>
-
-                </li>
 
                 <li class="">
 
@@ -1039,7 +376,7 @@ $this->registerJs('jQuery(document).ready(function(){App.init();});',View::POS_E
 
                     <i class="icon-user"></i> 
 
-                    <span class="title">Login Options</span>
+                    <span class="title">用户管理</span>
 
                     <span class="arrow "></span>
 
@@ -1066,113 +403,6 @@ $this->registerJs('jQuery(document).ready(function(){App.init();});',View::POS_E
                     </ul>
 
                 </li>
-
-                <li class="">
-
-                    <a href="javascript:;">
-
-                    <i class="icon-th"></i> 
-
-                    <span class="title">Data Tables</span>
-
-                    <span class="arrow "></span>
-
-                    </a>
-
-                    <ul class="sub-menu">
-
-                        <li>
-
-                            <a href="table_basic.html">
-
-                            Basic Tables</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="table_responsive.html">
-
-                            Responsive Tables</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="table_managed.html">
-
-                            Managed Tables</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="table_editable.html">
-
-                            Editable Tables</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="table_advanced.html">
-
-                            Advanced Tables</a>
-
-                        </li>
-
-                    </ul>
-
-                </li>
-
-                <li class="">
-
-                    <a href="javascript:;">
-
-                    <i class="icon-file-text"></i> 
-
-                    <span class="title">Portlets</span>
-
-                    <span class="arrow "></span>
-
-                    </a>
-
-                    <ul class="sub-menu">
-
-                        <li>
-
-                            <a href="portlet_general.html">
-
-                            General Portlets</a>
-
-                        </li>
-
-                        <li>
-
-                            <a href="portlet_draggable.html">
-
-                            Draggable Portlets</a>
-
-                        </li>
-
-                    </ul>
-
-                </li>
-
-                
-
-                <li class="last ">
-
-                    <a href="charts.html">
-
-                    <i class="icon-bar-chart"></i> 
-
-                    <span class="title">Visual Charts</span>
-
-                    </a>
-
-                </li>
-
             </ul>
 
             <!-- END SIDEBAR MENU -->
@@ -1316,27 +546,11 @@ $this->registerJs('jQuery(document).ready(function(){App.init();});',View::POS_E
                         </h3>
 
                         <ul class="breadcrumb">
-
-                            <li>
-
-                                <i class="icon-home"></i>
-
-                                <a href="index.html">系统首页</a> 
-
-                                <i class="icon-angle-right"></i>
-
-                            </li>
-
-                            <li>
-
-                                <a href="#">系统用户</a>
-
-                                <i class="icon-angle-right"></i>
-
-                            </li>
-
-                            <li><a href="#">管理员</a></li>
-
+                            <?= Breadcrumbs::widget([
+                            'itemTemplate' => "<li><i>{link}</i></li>\n >\n ",
+                            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                            ]) ?>
+                          
                         </ul>
 
                         <!-- END PAGE TITLE & BREADCRUMB-->
@@ -1344,6 +558,7 @@ $this->registerJs('jQuery(document).ready(function(){App.init();});',View::POS_E
                     </div>
 
                 </div>
+                
 
                 <!-- END PAGE HEADER-->
 
